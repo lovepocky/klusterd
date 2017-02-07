@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: klusterd
-        image: vyshane/klusterd:1.0
+        image: registry-internal.cn-hangzhou.aliyuncs.com/lovepocky/klusterd:1.1
         ports:
         - containerPort: 2551
         env:

@@ -9,6 +9,7 @@ object NodeConfigurator {
   def loadConfig(): Config = {
 
     def getHostLocalAddress: Option[String] = {
+      /*
       import java.net.NetworkInterface
 
       import scala.collection.JavaConversions._
@@ -18,6 +19,8 @@ object NodeConfigurator {
         .flatMap { interface =>
           interface.getInetAddresses.find(_.isSiteLocalAddress).map(_.getHostAddress)
         }
+      */
+      Some(java.net.InetAddress.getLocalHost.getHostAddress)
     }
 
     def getSeedNodes(config: Config): Array[String] = {
